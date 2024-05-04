@@ -56,7 +56,7 @@ Refer to the bot's help command or documentation for a complete list of availabl
 #### `/hearjokes`
 - Description: Hear as many different varieties of jokes as you'd like.
 - Usage: `/hearjokes`
-- Functionality: Takes amount as a required parameter and askes for the type of joke user would like to hear. Then sends joke(s) accordingly in the Discord channel.
+- Functionality: Takes amount as a required parameter and askes for the type of joke user would like to hear. The menu also includes insults, Up to the user to decide on jokes or an insult.Then sends joke(s) accordingly in the Discord channel.
 
 ### Customization
 

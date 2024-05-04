@@ -33,7 +33,7 @@ class askAlfred(commands.Cog):
   @nextcord.slash_command(
       name='alfred',
       description=
-      "Ask Alfred your question & he will try to answer according to how we are paying him :/"
+      "Keep your queries short & ask Alfred your question & he will try to answer according to how we are paying him :/"
   )
   async def alfred(self, ctx: Interaction, query):
     result = self.search_result(query)

@@ -190,7 +190,7 @@ class GameMode(nextcord.ui.View):
 
   @nextcord.ui.button(label='vs AI', style=nextcord.ButtonStyle.red)
   async def vsai(self, button: nextcord.ui.Button, ctx: Interaction):
-    await ctx.response.send_message('So you have chosen impossible difficulty!', ephemeral=True)
+    await ctx.response.send_message("You shall play against Alfred himself! Do not worry he will go easy on you.", ephemeral=True)
     await GameCog(self.client).vsai(ctx)
     self.value = False
     self.stop()

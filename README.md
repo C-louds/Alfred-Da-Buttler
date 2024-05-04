@@ -55,8 +55,14 @@ Refer to the bot's help command or documentation for a complete list of availabl
 
 #### `/hearjokes`
 - Description: Hear as many different varieties of jokes as you'd like.
-- Usage: `/hearjokes`
+- Usage: `/hearjokes (amount)`
 - Functionality: Takes amount as a required parameter and askes for the type of joke user would like to hear. The menu also includes insults, Up to the user to decide on jokes or an insult.Then sends joke(s) accordingly in the Discord channel.
+
+#### `/alfred`
+- Description: Ask Alfred for information on short queries.
+- Usage: `/alfred (query)`
+- Functionality: Takes small queries as a required parameter and responds with information regarding the query. You might find out about his frustration if you cross certain limits!
+
 
 ### Customization
 

@@ -13,7 +13,6 @@ class GameCog(commands.Cog):
   def __init__(self, client):
     self.client = client
   
-  
   def valid_word(self, prev_word, curr_word, turn, used_words):
    api_url = 'https://api.api-ninjas.com/v1/dictionary?word={}'.format(curr_word)
    response = requests.get(api_url, headers={'X-Api-Key': NINJA_API_KEY})
@@ -21,7 +20,8 @@ class GameCog(commands.Cog):
    #print(response.json()['valid'])
    if turn == 0:
       used_words.add(curr_word.lower())
-      return response.json()['valid']
+      if response.json()['valid'] is True:
+        return True
    else:
       last_c = prev_word.lower()[-1]
       if last_c == curr_word.lower()[0] and response.json()['valid'] == True:
@@ -44,7 +44,14 @@ class GameCog(commands.Cog):
     for j in range(length):
       temp = response.json()[j]['word']
       options.append(temp.capitalize())
-    word = random.choice(options)
+    while not found:
+      temp_word = random.choice(options)
+      if self.valid_word(prev_word, temp_word, 0, used_words):
+        word = temp_word
+        used_words.remove(temp_word.lower())
+        found = True
+    if not found:
+      word = "Give up"
     return word
   
   async def pvp(self, ctx: nextcord.Interaction):
